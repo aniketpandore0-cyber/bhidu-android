@@ -19,14 +19,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Download Gradle wrapper jar
+      - name: Set up Gradle wrapper
         run: |
           mkdir -p gradle/wrapper
           curl -L -o gradle/wrapper/gradle-wrapper.jar \
             https://github.com/gradle/gradle/raw/v8.6.0/gradle/wrapper/gradle-wrapper.jar
-
-      - name: Create gradlew script
-        run: |
           curl -L -o gradlew \
             https://raw.githubusercontent.com/gradle/gradle/v8.6.0/gradlew
           chmod +x gradlew
